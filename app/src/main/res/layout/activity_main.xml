@@ -1,33 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/white">
+    android:orientation="vertical" android:background="@color/white">
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipe"
-        android:layout_width="match_parent" android:layout_height="match_parent">
-        <WebView android:id="@+id/webview"
-            android:layout_width="match_parent" android:layout_height="match_parent" />
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <FrameLayout
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1">
 
-    <ProgressBar android:id="@+id/progress"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent" android:layout_height="4dp"
-        android:max="100" android:progressTint="@color/brand" />
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe"
+            android:layout_width="match_parent" android:layout_height="match_parent">
+            <WebView android:id="@+id/webview"
+                android:layout_width="match_parent" android:layout_height="match_parent" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    <LinearLayout android:id="@+id/offline"
-        android:layout_width="match_parent" android:layout_height="match_parent"
-        android:orientation="vertical" android:gravity="center"
-        android:padding="32dp" android:background="@color/white"
-        android:visibility="gone">
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="@string/offline_title" android:textSize="22sp"
-            android:textStyle="bold" android:textColor="@color/brand_dark" />
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:layout_marginTop="8dp" android:gravity="center"
-            android:text="@string/offline_text" android:textSize="16sp" />
-        <Button android:id="@+id/retry"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:layout_marginTop="24dp" android:text="@string/retry" />
+        <ProgressBar android:id="@+id/progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent" android:layout_height="3dp"
+            android:max="100" android:progressTint="@color/accent"
+            android:progressBackgroundTint="@android:color/transparent" />
+
+        <LinearLayout android:id="@+id/offline"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:orientation="vertical" android:gravity="center"
+            android:padding="32dp" android:background="@color/brand"
+            android:clickable="true" android:visibility="gone">
+            <ImageView android:layout_width="220dp" android:layout_height="wrap_content"
+                android:adjustViewBounds="true" android:src="@drawable/logo_full"
+                android:contentDescription="@string/app_name" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/offline_title" android:textSize="20sp"
+                android:textStyle="bold" android:textColor="@color/white" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="6dp" android:gravity="center"
+                android:text="@string/offline_text" android:textSize="15sp"
+                android:textColor="@color/nav_inactive" />
+            <Button android:id="@+id/retry"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="24dp" android:text="@string/retry"
+                android:textColor="@color/white" android:backgroundTint="@color/accent" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout android:id="@+id/bottom_nav"
+        android:layout_width="match_parent" android:layout_height="58dp"
+        android:orientation="horizontal" android:background="@color/brand"
+        android:elevation="8dp">
+        <TextView android:id="@+id/nav_home" style="@style/NavItem"
+            android:text="@string/nav_home" android:drawableTop="@drawable/ic_nav_home" />
+        <TextView android:id="@+id/nav_services" style="@style/NavItem"
+            android:text="@string/nav_services" android:drawableTop="@drawable/ic_nav_services" />
+        <TextView android:id="@+id/nav_news" style="@style/NavItem"
+            android:text="@string/nav_news" android:drawableTop="@drawable/ic_nav_news" />
+        <TextView android:id="@+id/nav_contact" style="@style/NavItem"
+            android:text="@string/nav_contact" android:drawableTop="@drawable/ic_nav_contact" />
+        <TextView android:id="@+id/nav_whatsapp" style="@style/NavItem"
+            android:text="@string/nav_whatsapp" android:drawableTop="@drawable/ic_nav_chat" />
     </LinearLayout>
-</FrameLayout>
+</LinearLayout>

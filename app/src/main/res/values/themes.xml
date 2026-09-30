@@ -2,12 +2,30 @@
     <style name="Theme.App" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/brand</item>
         <item name="colorPrimaryDark">@color/brand_dark</item>
-        <item name="colorAccent">@color/brand</item>
-        <item name="android:statusBarColor">@color/brand_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:statusBarColor">@color/brand</item>
+        <item name="android:navigationBarColor">@color/brand</item>
+        <item name="android:windowBackground">@color/white</item>
     </style>
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/white</item>
-        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="windowSplashScreenBackground">@color/brand</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_icon</item>
         <item name="postSplashScreenTheme">@style/Theme.App</item>
+    </style>
+    <style name="NavItem">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/nav_inactive</item>
+        <item name="android:drawablePadding">2dp</item>
+        <item name="android:drawableTint">@color/nav_inactive</item>
+        <item name="android:background">@drawable/nav_item_bg</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:maxLines">1</item>
     </style>
 </resources>

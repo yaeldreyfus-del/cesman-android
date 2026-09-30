@@ -1,5 +1,9 @@
 <resources>
-    <color name="brand">#0B5C7A</color>
-    <color name="brand_dark">#08455C</color>
+    <color name="brand">#0B2E6B</color>
+    <color name="brand_dark">#082250</color>
+    <color name="accent">#F26B3A</color>
+    <color name="green">#8CD155</color>
+    <color name="cyan">#5CC3CE</color>
     <color name="white">#FFFFFF</color>
+    <color name="nav_inactive">#B3FFFFFF</color>
 </resources>
