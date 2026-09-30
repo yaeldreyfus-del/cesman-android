@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CESMAN</string>
+    <string name="site_url">https://www.cesmaneg.com/</string>
+    <string name="offline_title">Pas de connexion</string>
+    <string name="offline_text">Vérifiez votre connexion Internet, puis réessayez.</string>
+    <string name="retry">Réessayer</string>
+</resources>
